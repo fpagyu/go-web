@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:5.0-rc-alpine
+    expose:
+      - 6379
+    ports: 
+      - "6379:6379"
+    # volumes:
+    #   - ""
+    command: ["redis-server", "--requirepass", "lovewith99"]
