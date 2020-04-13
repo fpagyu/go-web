@@ -1,4 +1,6 @@
-# go-web
+# go-web 
+
+## 一个简单的使用gin构建web api的工程实践例子
 
 ## 部署
 
