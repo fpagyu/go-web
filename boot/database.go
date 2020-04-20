@@ -14,7 +14,7 @@ type DBComponent struct {
 	Group string
 }
 
-func (c DBComponent) NewFunc() interface{} {
+func (c DBComponent) Setup() interface{} {
 	return func(conf *viper.Viper) (*gorm.DB, error) {
 		cfg := conf.GetStringMapString("db")
 

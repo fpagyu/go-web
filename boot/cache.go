@@ -12,7 +12,7 @@ type CacheComponent struct {
 	Group string
 }
 
-func (c CacheComponent) NewFunc() interface{} {
+func (c CacheComponent) Setup() interface{} {
 	return func(conf *viper.Viper) *cache.Codec {
 		cfg := conf.GetStringMap("cache")
 

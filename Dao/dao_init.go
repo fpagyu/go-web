@@ -24,7 +24,7 @@ type daoConns struct {
 }
 
 func init() {
-	err := boot.App.Container.Invoke(func(v daoConns) {
+	err := boot.App.Invoke(func(v daoConns) {
 		DB = v.DB
 		Redis = v.Redis
 		Cache = v.Cache

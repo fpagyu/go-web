@@ -1,23 +1,10 @@
 package boot
 
-import "os"
-
 var App *GinApp
 
 func init() {
-	confPath := os.Getenv("CONF_PATH")
-
-	configFile := ConfigFile{
-		Name: "settings",
-		Type: "yaml",
-		Path: []string{
-			confPath,
-			"config/",
-			"../config/",
-		},
-	}
-	ginApp, err := NewGinApp(
-		configFile,
+	var err error
+	App, err = NewGinApp(
 		DBComponent{Name: "db"},
 		RedisComponent{Name: "redis"},
 		CacheComponent{Name: "cache"},
@@ -25,5 +12,4 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	App = ginApp
 }

@@ -10,7 +10,7 @@ type RedisComponent struct {
 	Group string
 }
 
-func (c RedisComponent) NewFunc() interface{} {
+func (c RedisComponent) Setup() interface{} {
 	return func(conf *viper.Viper) (*redis.Client, error) {
 		cfg := conf.GetStringMap("redis")
 
